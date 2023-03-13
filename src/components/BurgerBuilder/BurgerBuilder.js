@@ -61,6 +61,13 @@ class BurgerBuilder extends Component {
         })
     }
 
+    handleCheckout = () => {
+        this.props.history.push("/checkout");
+    }
+    componentDidMount() {
+        console.log(this.props);
+    }
+
     render() {
         return (
             <div>
@@ -80,13 +87,12 @@ class BurgerBuilder extends Component {
                         <Summary ingredients={this.state.ingredients} />
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="success" onClick={this.toggleModal}>Continue To Checkout</Button>
+                        {/* <Button color="success" onClick={this.handleCheckout}>Continue To Checkout</Button> */}
+                        <a href="/checkout"><Button color="success">Continue To Checkout</Button></a>
                         <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </div>
-
-
         );
     }
 }
